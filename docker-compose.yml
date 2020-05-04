@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  node-js:
+    build: .
+    image: localhost:5000/node-js
+    container_name: node-js
+    volumes:
+    - .:/app
+    ports:
+    - 8080:8080
