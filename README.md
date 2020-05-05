@@ -10,4 +10,4 @@ Build and push image
 
 Run local image
 
-```docker run --rm -it -v $PWD:/app -u 1000:1000 --network host localhost:5000/node-js```
+```docker run --rm -it -v $PWD:/app -u 1000:1000 -w /app --network host localhost:5000/node-js```
