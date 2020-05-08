@@ -5,6 +5,8 @@ services:
     image: localhost:5000/node-js
     container_name: node-js
     volumes:
-    - .:/app
+      - .:/app
     ports:
-    - 8080:8080
+      - 4200:4200
+    networks:
+      - default
