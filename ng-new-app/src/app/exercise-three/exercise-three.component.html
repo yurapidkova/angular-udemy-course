@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <button class="btn btn-primary" (click)="toogle()">{{isHidden ? 'Display' : 'Hide'}} Details</button>
+      <p *ngIf="!isHidden">Any content for toogle</p>
+      <hr>
+      <p>Logs</p>
+      <table>
+        <tr>
+          <td style="width: 100px">ID</td>
+          <td style="width: 100px">Action</td>
+          <td style="width: 300px">Time</td>
+        </tr>
+        <tr *ngFor="let detail of details" [ngClass]="{'more-then-five': detail.id > 4}">
+          <td>{{detail.id}}</td>
+          <td>{{detail.action}}</td>
+          <td>{{detail.time}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
