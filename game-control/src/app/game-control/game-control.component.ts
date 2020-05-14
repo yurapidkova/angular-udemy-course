@@ -9,6 +9,7 @@ export class GameControlComponent implements OnInit {
   @Output()
   numberReceived = new EventEmitter<number>();
   private gameRef: number;
+  private lastNumber = 0;
 
   constructor() {
   }
@@ -18,7 +19,8 @@ export class GameControlComponent implements OnInit {
 
   onGameStart = (): void => {
     this.gameRef = setInterval(() => {
-      this.numberReceived.emit(Math.ceil(Math.random() * 1000));
+      this.lastNumber += Math.ceil(Math.random() * 10);
+      this.numberReceived.emit(this.lastNumber);
     }, 1000);
   }
 
