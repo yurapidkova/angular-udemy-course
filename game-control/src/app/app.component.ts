@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'game-control';
+  oddNumbers: number[] = [];
+  evenNumbers: number[] = [];
+
+  onNumberReceived = (num: number): void => {
+    if (num % 2 === 0) {
+      this.evenNumbers.push(num);
+    } else {
+      this.oddNumbers.push(num);
+    }
+  }
+
 }
