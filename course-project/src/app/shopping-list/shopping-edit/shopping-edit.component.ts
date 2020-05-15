@@ -12,7 +12,7 @@ export class ShoppingEditComponent implements OnInit {
   ingredientAdd = new EventEmitter<Ingredient>();
 
   constructor() {
-    this.ingredient = this.getNewIngredient();
+    this.clearIngredient();
   }
 
   ngOnInit(): void {
@@ -23,13 +23,16 @@ export class ShoppingEditComponent implements OnInit {
       return;
     }
     this.ingredientAdd.emit(this.ingredient);
+    this.clearIngredient();
   }
 
   onIngredientClear = (): void => {
-    this.ingredient = this.getNewIngredient();
+    this.clearIngredient();
   }
 
   isIngredientValid = (): boolean => !!(this.ingredient.amount && this.ingredient.name);
 
-  private getNewIngredient = (name: string = '', amount: number = 0): Ingredient => new Ingredient(name, amount);
+  private clearIngredient = (): void => {
+    this.ingredient = new Ingredient('', 0);
+  }
 }
