@@ -1,0 +1,21 @@
+.game-screen {
+  min-height: 100px;
+  border-radius: 10px;
+}
+
+.game-text {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.init {
+  background-color: darkgrey;
+}
+
+.odd {
+  background-color: blue;
+}
+
+.even {
+  background-color: green;
+}

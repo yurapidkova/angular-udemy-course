@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="game-screen" [ngClass]="class">
+      <div class="game-text"><span class="text-white">{{ title }}</span></div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <button type="button" class="btn btn-primary" (click)="onGameStart()">Start Game</button>
+  </div>
+  <div class="col-md-6">
+    <button type="button" class="btn btn-danger" (click)="onGameStop()">Stop Game</button>
+  </div>
+</div>
